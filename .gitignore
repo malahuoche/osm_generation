@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+third_party/
+data/
+weights/
+runs/
+*.pt
+*.ckpt
+*.npz
+*.npy
+.env
+.DS_Store
+build/
+dist/

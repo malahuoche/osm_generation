@@ -1,0 +1,1 @@
+{"id":"sequence/frame","split":"train","region":"geographic-region-a","image":"images/frame.png","target":"maps/frame.npz","target_format":"six_chw","camera":{"model":"PINHOLE","width":1242,"height":375,"params":[721.5,721.5,610.0,173.0]},"roll_pitch_degrees":[0.0,0.0]}

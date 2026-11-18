@@ -1,0 +1,8 @@
+{
+  "new_york": "train",
+  "chicago": "train",
+  "houston": "train",
+  "los_angeles": "train",
+  "pittsburgh": "val",
+  "san_francisco": "test"
+}
