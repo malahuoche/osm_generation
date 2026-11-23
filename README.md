@@ -108,7 +108,7 @@ python -m bev_osm.audit \
 
 ### 方案 C：KITTI / Boreas
 
-**直接下载的原始驾驶数据见 [KITTI / Boreas 原始数据完整流程](docs/raw-driving-data.md)**。新增原始标定/位姿适配、OSM获取、原版MIA渲染和QC预览；KITTI 20帧已端到端实测，Boreas目前仅完成真实首帧几何核验。
+**直接下载的原始驾驶数据见 [KITTI / Boreas 原始数据完整流程](docs/raw-driving-data.md)**。新增原始标定/位姿适配、OSM获取、原版MIA渲染和QC预览；KITTI 20帧和Boreas首帧已完成端到端预处理实测；Boreas单帧不代表全序列配准已验证。
 
 - [KITTI Raw 官方下载](https://www.cvlibs.net/datasets/kitti/raw_data.php)：RGB、标定、位姿；下载可能要求注册。
 - [Boreas 官方入口](https://www.boreas.utias.utoronto.ca/)：按其下载说明取得相机、标定和位姿。

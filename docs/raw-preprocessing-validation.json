@@ -16,5 +16,37 @@
   "download_bytes": 17285020,
   "map_machine_source_commit": "2f072bba7acd6f75d7a51107fd82ba9f85cba3fc",
   "map_machine_source_hashes_pass": true,
-  "boreas_scope": "One real camera pose/intrinsics/GPS check only; OSM download rate limited; no end-to-end Boreas claim"
+  "boreas_scope": "One real frame end-to-end: official OSM map export + complete multipolygon + native MIA rendering + BEV extraction + visual QC; not full-sequence validation",
+  "boreas_qc": {
+    "sample_count": 1,
+    "schema_and_hashes_pass": true,
+    "intrinsics_half_pixel_roundtrip_pass": true,
+    "maximum_rotation_residual": 2.220446049250313e-16,
+    "maximum_sync_delta_seconds": 0,
+    "limits": [
+      "Not a training or generalization test",
+      "Current OSM is temporally mismatched weak supervision",
+      "Projection support is not occlusion visibility",
+      "Gravity rectification uses provided pose: not a strict RGB-only gravity estimate",
+      "Visual agreement does not verify surveyed absolute map accuracy"
+    ]
+  },
+  "boreas_osm_source": {
+    "requests": [
+      "https://api.openstreetmap.org/api/0.6/map?bbox=-79.46835540044853,43.78052181891937,-79.46386757252856,43.78377330465719",
+      "https://api.openstreetmap.org/api/0.6/relation/21951124/full"
+    ],
+    "provider": "osm-api",
+    "query": "[out:xml][timeout:120];(node(43.78052181891937,-79.46835540044853,43.78377330465719,-79.46386757252856);way(43.78052181891937,-79.46835540044853,43.78377330465719,-79.46386757252856);relation[type=multipolygon](43.78052181891937,-79.46835540044853,43.78377330465719,-79.46386757252856););(._;>>;);out meta;",
+    "retrieved_utc": "2026-11-23T08:14:18.994635+00:00",
+    "sha256": "97266ffdc0140f00f3352e2c5eb27e6463e608d29f49d8d85b0bca0c8ff9e844",
+    "note": "Current OSM weak labels; not contemporaneous surveyed GT",
+    "bbox": [
+      -79.46835540044853,
+      43.78052181891937,
+      -79.46386757252856,
+      43.78377330465719
+    ]
+  },
+  "boreas_visual_limitation": "Visible dome on right is not represented in the six semantic layers; map completeness/style requires further inspection"
 }
