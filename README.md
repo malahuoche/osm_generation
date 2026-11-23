@@ -51,6 +51,8 @@ sha256sum weights/mapper-excl-ood.ckpt
 
 ## 3. 数据在哪里下载、放在哪里
 
+**逐步操作见 [数据预处理指南](docs/preprocessing.md)**：已有428张实验的导出和迁移、官方MIA目录索引、RGB/标定/GT的处理、输出检查，以及新KITTI/Boreas尚缺的GT生成步骤。训练读取缓存BEV，不直接读取原始图片。
+
 建议自己设置服务器路径，下面的 `/data/...` 均为示例，代码不硬编码这些位置：
 
 ```text
