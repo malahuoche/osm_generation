@@ -1,0 +1,180 @@
+{
+  "official_source_verification": [
+    {
+      "path": "osm/reader.py",
+      "url": "https://raw.githubusercontent.com/facebookresearch/OrienterNet/0280b6e248046dc7d714801d7d0651a162fd5a63/maploc/osm/reader.py",
+      "sha256": "7c662573968ae587262167d12d838724d2e86003fd2cba714c41d6b830ea9669",
+      "matches_official": true
+    },
+    {
+      "path": "osm/data.py",
+      "url": "https://raw.githubusercontent.com/facebookresearch/OrienterNet/0280b6e248046dc7d714801d7d0651a162fd5a63/maploc/osm/data.py",
+      "sha256": "caf71be0197f1ef2788534781a8d9569c116e464c1bd9e813184d6c635134fb0",
+      "matches_official": true
+    },
+    {
+      "path": "osm/parser.py",
+      "url": "https://raw.githubusercontent.com/facebookresearch/OrienterNet/0280b6e248046dc7d714801d7d0651a162fd5a63/maploc/osm/parser.py",
+      "sha256": "2984b470ed4e8f0cb7bc116025c67a6a0ae7ac97ca4ab09be233b0872978caec",
+      "matches_official": true
+    },
+    {
+      "path": "osm/raster.py",
+      "url": "https://raw.githubusercontent.com/facebookresearch/OrienterNet/0280b6e248046dc7d714801d7d0651a162fd5a63/maploc/osm/raster.py",
+      "sha256": "00ba43290bf46355cab072ea4236dd2f4e86e2bf4437ffb2ec57caeaa2df6d9a",
+      "matches_official": true
+    },
+    {
+      "path": "osm/viz.py",
+      "url": "https://raw.githubusercontent.com/facebookresearch/OrienterNet/0280b6e248046dc7d714801d7d0651a162fd5a63/maploc/osm/viz.py",
+      "sha256": "2a772a22e394adc8aaad881b4e2c9998e5aa1f3e5d0f760e47191c4ef6ad4e8e",
+      "matches_official": true
+    },
+    {
+      "path": "utils/geo.py",
+      "url": "https://raw.githubusercontent.com/facebookresearch/OrienterNet/0280b6e248046dc7d714801d7d0651a162fd5a63/maploc/utils/geo.py",
+      "sha256": "d0892b816351534dc1399730446c96dcbcf990de8d81a2a048a6e003dc0a51bd",
+      "matches_official": true
+    },
+    {
+      "path": "utils/geo_opensfm.py",
+      "url": "https://raw.githubusercontent.com/facebookresearch/OrienterNet/0280b6e248046dc7d714801d7d0651a162fd5a63/maploc/utils/geo_opensfm.py",
+      "sha256": "3a9d6533b8f6af7bf00c3a59f4f9976648061e4230935d5bd6f7b459ce01431e",
+      "matches_official": true
+    }
+  ],
+  "boreas": {
+    "sample_count": 1,
+    "same_osm_hash_verified": true,
+    "coordinate_check": {
+      "maximum_metric_discrepancy_m": 8.971585839620914e-07,
+      "sample_count": 1,
+      "test": "MIA geographic target centers projected through OrienterNet frame vs common x/z grid; zero-height OSM datum included"
+    },
+    "groups": {
+      "areas": [
+        "building",
+        "parking",
+        "playground",
+        "grass",
+        "park",
+        "forest",
+        "water"
+      ],
+      "ways": [
+        "fence",
+        "wall",
+        "hedge",
+        "kerb",
+        "building_outline",
+        "cycleway",
+        "path",
+        "road",
+        "busway",
+        "tree_row"
+      ],
+      "nodes": [
+        "tree",
+        "stone",
+        "crossing",
+        "lamp",
+        "traffic_signal",
+        "bus_stop",
+        "stop_sign",
+        "junction",
+        "bus_stop_position",
+        "gate",
+        "bollard",
+        "shop",
+        "restaurant",
+        "bar",
+        "pharmacy",
+        "fuel",
+        "bicycle_parking",
+        "charging_station",
+        "parking_entrance",
+        "atm",
+        "toilets",
+        "vending_machine",
+        "fountain",
+        "waste_basket",
+        "bench",
+        "post_box",
+        "artwork",
+        "recycling",
+        "give_way",
+        "clock",
+        "fire_hydrant",
+        "pole",
+        "street_cabinet"
+      ]
+    }
+  },
+  "kitti": {
+    "sample_count": 20,
+    "same_osm_hash_verified": true,
+    "coordinate_check": {
+      "maximum_metric_discrepancy_m": 0.0010152225995492276,
+      "sample_count": 20,
+      "test": "MIA geographic target centers projected through OrienterNet frame vs common x/z grid; zero-height OSM datum included"
+    },
+    "groups": {
+      "areas": [
+        "building",
+        "parking",
+        "playground",
+        "grass",
+        "park",
+        "forest",
+        "water"
+      ],
+      "ways": [
+        "fence",
+        "wall",
+        "hedge",
+        "kerb",
+        "building_outline",
+        "cycleway",
+        "path",
+        "road",
+        "busway",
+        "tree_row"
+      ],
+      "nodes": [
+        "tree",
+        "stone",
+        "crossing",
+        "lamp",
+        "traffic_signal",
+        "bus_stop",
+        "stop_sign",
+        "junction",
+        "bus_stop_position",
+        "gate",
+        "bollard",
+        "shop",
+        "restaurant",
+        "bar",
+        "pharmacy",
+        "fuel",
+        "bicycle_parking",
+        "charging_station",
+        "parking_entrance",
+        "atm",
+        "toilets",
+        "vending_machine",
+        "fountain",
+        "waste_basket",
+        "bench",
+        "post_box",
+        "artwork",
+        "recycling",
+        "give_way",
+        "clock",
+        "fire_hydrant",
+        "pole",
+        "street_cabinet"
+      ]
+    }
+  }
+}

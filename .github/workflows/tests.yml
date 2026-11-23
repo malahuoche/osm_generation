@@ -9,5 +9,12 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cpu
-      - run: pip install -e .
+      - run: pip install -e '.[orienternet]'
+      - uses: actions/checkout@v4
+        with:
+          repository: facebookresearch/OrienterNet
+          ref: 0280b6e248046dc7d714801d7d0651a162fd5a63
+          path: third_party/OrienterNet
       - run: python -m unittest discover -s tests -v
+        env:
+          ORIENTERNET_REPO: third_party/OrienterNet

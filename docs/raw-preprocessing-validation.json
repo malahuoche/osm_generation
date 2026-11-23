@@ -48,5 +48,5 @@
       43.78377330465719
     ]
   },
-  "boreas_visual_limitation": "Visible dome on right is not represented in the six semantic layers; map completeness/style requires further inspection"
+  "boreas_visual_limitation": "Nearby circular building way 66984065 lies mostly beyond the 50m crop; earlier missing-label interpretation was not established. See OrienterNet wider-context comparison."
 }

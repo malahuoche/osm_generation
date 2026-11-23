@@ -16,3 +16,9 @@ These sources and their assets are not bundled; follow their repository licenses
 OSM XML and rendered labels derive from © OpenStreetMap contributors under ODbL;
 retain attribution and review the license for redistribution of generated datasets.
 The KITTI and Boreas downloads remain subject to their respective dataset terms.
+
+The optional OrienterNet raster comparison imports the official parser, rasterizer
+and palette at commit `0280b6e248046dc7d714801d7d0651a162fd5a63` from
+https://github.com/facebookresearch/OrienterNet. Upstream source is not bundled;
+its own license and notices apply. The displayed common palette is a diagnostic
+view and does not modify the native categorical raster saved by this package.
