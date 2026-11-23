@@ -1,0 +1,20 @@
+{
+  "sample_count": 20,
+  "schema_and_hashes_pass": true,
+  "intrinsics_half_pixel_roundtrip_pass": true,
+  "maximum_rotation_residual": 4.79967755540045e-08,
+  "maximum_sync_delta_seconds": 0.011764619,
+  "limits": [
+    "Not a training or generalization test",
+    "Current OSM is temporally mismatched weak supervision",
+    "Projection support is not occlusion visibility",
+    "Gravity rectification uses provided pose: not a strict RGB-only gravity estimate",
+    "Visual agreement does not verify surveyed absolute map accuracy"
+  ],
+  "full_projection_chain_max_residual": 1.3642420526593924e-12,
+  "native_render_sampling_max_m": 0.27819777172265736,
+  "download_bytes": 17285020,
+  "map_machine_source_commit": "2f072bba7acd6f75d7a51107fd82ba9f85cba3fc",
+  "map_machine_source_hashes_pass": true,
+  "boreas_scope": "One real camera pose/intrinsics/GPS check only; OSM download rate limited; no end-to-end Boreas claim"
+}

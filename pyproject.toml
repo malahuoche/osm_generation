@@ -9,5 +9,6 @@ requires-python = ">=3.10"
 dependencies = ["torch>=2.5,<3", "numpy>=1.24,<3", "scipy>=1.10", "Pillow>=10", "PyYAML>=6"]
 [project.optional-dependencies]
 mia = ["torchvision>=0.20", "omegaconf>=2.3", "torchmetrics>=1.4", "opencv-python-headless>=4.8", "einops>=0.7", "matplotlib>=3.8"]
+geo = ["pyproj>=3.6", "CairoSVG>=2.7", "pycairo>=1.25", "colour==0.1.5", "svgwrite>=1.4", "shapely>=2", "portolan==1.0.1"]
 [tool.setuptools.packages.find]
 include = ["bev_osm*"]

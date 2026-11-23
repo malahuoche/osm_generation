@@ -108,10 +108,12 @@ python -m bev_osm.audit \
 
 ### 方案 C：KITTI / Boreas
 
+**直接下载的原始驾驶数据见 [KITTI / Boreas 原始数据完整流程](docs/raw-driving-data.md)**。新增原始标定/位姿适配、OSM获取、原版MIA渲染和QC预览；KITTI 20帧已端到端实测，Boreas目前仅完成真实首帧几何核验。
+
 - [KITTI Raw 官方下载](https://www.cvlibs.net/datasets/kitti/raw_data.php)：RGB、标定、位姿；下载可能要求注册。
 - [Boreas 官方入口](https://www.boreas.utias.utoronto.ca/)：按其下载说明取得相机、标定和位姿。
 
-**它们的原始 RGB 下载不等于本任务的配对 OSM GT。** 还需要对应区域/日期的 OSM 数据、位姿到相机的变换、与当前栅格一致的渲染。不要拿航拍图、RGB 语义分割图或 LiDAR 标签直接充当本任务 GT。本版本不会自动为任意 KITTI/Boreas 序列生成合格 GT；已有本地 KITTI 渲染结果可直接导出：
+**它们的原始 RGB 下载不等于本任务的配对 OSM GT。** 还需要对应区域/日期的 OSM 数据、位姿到相机的变换、与当前栅格一致的渲染。不要拿航拍图、RGB 语义分割图或 LiDAR 标签直接充当本任务 GT。新增脚本可构造配对弱标签，但不保证任意区域的OSM完整性或测绘精度；已有本地 KITTI 渲染结果也可直接导出：
 
 ```bash
 python -m bev_osm.export_local \

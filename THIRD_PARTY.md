@@ -8,3 +8,11 @@
 - DiffMap参考：https://arxiv.org/abs/2405.02008 。借鉴条件地图latent扩散思路，未复制其实现，也不声明复现其完整算法。
 
 本次整理没有替仓库所有者选择新的开源许可证；公开仓库本身不等于授予任意再许可权限。需要对本项目原创代码发布具体许可证时由所有者另行决定。
+
+Raw-data preprocessing uses external MapMachine at commit
+`2f072bba7acd6f75d7a51107fd82ba9f85cba3fc` from
+https://github.com/tonyzzzzzz/map-machine and the pinned MIA rendering definitions/style.
+These sources and their assets are not bundled; follow their repository licenses.
+OSM XML and rendered labels derive from © OpenStreetMap contributors under ODbL;
+retain attribution and review the license for redistribution of generated datasets.
+The KITTI and Boreas downloads remain subject to their respective dataset terms.

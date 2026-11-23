@@ -55,6 +55,8 @@ def records(path):
     ):
         raise ValueError("Region leakage across splits")
     meta = json.loads(path.with_suffix(".meta.json").read_text())
+    if meta.get("prepare", {}).get("qc_only", False):
+        raise ValueError("QC-only preparation cannot be used as a training/evaluation benchmark")
     if meta["grid"] != GRID:
         raise ValueError("Unsupported grid/classes; do not silently resize maps")
     return rows

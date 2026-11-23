@@ -2,13 +2,15 @@
 
 所有命令在本仓库根目录、已安装 README 第1节依赖的 Python 环境执行。当前实现冻结 MIA：**RGB → 缓存 BEV → 训练生成模型**，训练阶段不再读取 RGB。缓存不能用于端到端解冻 MIA。
 
+原始KITTI/Boreas的新增入口与实测范围见 [原始驾驶数据流程](raw-driving-data.md)。
+
 ## 先选对入口
 
 |你手里的数据|入口|是否还需要生成 GT|
 |---|---|---|
 |本次实验的 KITTI 428 张配对标签及特征|下面 A：export_local|不需要|
 |官方 MIA 配对数据，含图片、semantic_masks、dump.json|下面 B：index_mia → prepare|不需要|
-|只有 KITTI/Boreas 原始图片、位姿与标定|下面 C|需要，当前仓库未提供通用生成器|
+|只有 KITTI/Boreas 原始图片、位姿与标定|下面 C|需要，使用新增 raw_* → fetch_osm → render_raw 流程|
 
 ## A. 搬迁已有的 428 张实验数据
 
@@ -131,7 +133,7 @@ export OSM_MANIFEST=/data/osm-generation/prepared/manifest.jsonl
 
 ## C. 新 KITTI / Boreas 或其他自建配对数据
 
-**当前缺失的步骤是原始驾驶数据到对齐 OSM 标签的通用转换器。仅下载原始数据，不能直接运行上面的 index_mia。** 需要先用相机位姿、相机/车体坐标变换及对应 OSM 提取，在一致尺度、朝向、渲染规则下生成标签；道路宽度渲染假设、地图时间差和缺失标注需记录。不能用标签反向挑选最优相机方向。无需 LiDAR。
+**原始驾驶数据不能直接运行 index_mia。请先按 [新增原始数据流程](raw-driving-data.md) 构造配对标签，再提取BEV。** 需要先用相机位姿、相机/车体坐标变换及对应 OSM 提取，在一致尺度、朝向、渲染规则下生成标签；道路宽度渲染假设、地图时间差和缺失标注需记录。不能用标签反向挑选最优相机方向。无需 LiDAR。
 
 准备好后可按 `configs/pair.example.jsonl` 为每帧写一行，包含唯一 id、split、region、image、target、target_format、camera、roll_pitch_degrees。路径相对 pairs.jsonl 所在目录；camera.params 为 PINHOLE 的 `[fx,fy,cx,cy]`，width/height 对应输入图片。不要照抄示例内参，也不要把未知 roll/pitch 一律当作零。
 

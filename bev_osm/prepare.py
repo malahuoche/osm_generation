@@ -16,6 +16,11 @@ def main():
     ap.add_argument("--device", default="cuda")
     ap.add_argument("--threads", type=int, default=4)
     ap.add_argument("--resume", action="store_true")
+    ap.add_argument(
+        "--qc-only",
+        action="store_true",
+        help="Allow a single-region alignment check; output is not a train/val/test benchmark",
+    )
     ap.add_argument("--flood-eval-mask", action="store_true")
     args = ap.parse_args()
     pairs = [json.loads(s) for s in args.pairs.read_text().splitlines() if s.strip()]
@@ -26,7 +31,7 @@ def main():
             raise ValueError("Duplicate sample id")
         ids.add(row["id"])
         regions[row["split"]].add(row["region"])
-    if any(not v for v in regions.values()):
+    if not args.qc_only and any(not v for v in regions.values()):
         raise ValueError("Require nonempty train/val/test before extracting features")
     if any(
         regions[a] & regions[b]
@@ -43,6 +48,8 @@ def main():
         checkpoint_sha256=sha(args.mia_checkpoint),
         flood_eval_mask=args.flood_eval_mask,
     )
+    if args.qc_only:
+        config["qc_only"] = True
     done = out / "prepare.json"
     if done.exists() and json.loads(done.read_text()) != config:
         raise ValueError("Preparation settings changed; use fresh output")
@@ -131,7 +138,12 @@ def main():
     )
     from .data import records
 
-    records(manifest)
+    if not args.qc_only:
+        records(manifest)
+    else:
+        print(
+            "QC ONLY: single-sequence preprocessing, not a held-out evaluation dataset"
+        )
     print(manifest)
 
 
